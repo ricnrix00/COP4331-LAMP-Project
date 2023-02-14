@@ -40,15 +40,6 @@
                     <input type="text" class="form-control" id="lastName" placeholder="Last name" required>
                 </div>
                 <div class="d-flex">
-                    <label class="input-group-text" for="email">
-                        <svg style="height: 1em; width: 1em">
-                            <use xlink:href="#userEmail"></use>
-                        </svg>
-                    </label>
-                    <input type="email" id="email" class="form-control"
-                        placeholder="Email: example@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
-                </div>
-                <div class="d-flex">
                     <label class="input-group-text" for="username">
                         <svg style="height: 1em; width: 1em">
                             <use xlink:href="#userIcon"></use>
@@ -65,17 +56,14 @@
                     <input type="password" id="password" class="form-control" placeholder="Password"
                         required>
                 </div>
-                <div class="d-flex flex-wrap">
-                    <div class="input-group">
-                        <label class="input-group-prepend input-group-text" for="phone">
-                            <svg style="height: 1em; width: 1em">
-                                <use xlink:href="#userPhone"></use>
-                            </svg>
-                        </label>
-                        <input type="tel" id="phone" class="form-control" placeholder="Phone number"
-                            pattern="[0-9]{10}" required>
-                    </div>
-                    <small class="fw-light">Format: 1234567890</small>
+                <div class="d-flex">
+                    <label class="input-group-text" for="repeatPassword">
+                        <svg style="height: 1em; width: 1em;">
+                            <use xlink:href="#userPass"></use>
+                        </svg>
+                    </label>
+                    <input type="password" id="repeatPassword" class="form-control" placeholder="Confirm Password"
+                        required>
                 </div>
                 <span id="formCorrection"></span>
                 <div class="d-grid gap-3">

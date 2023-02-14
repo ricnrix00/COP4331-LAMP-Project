@@ -1,27 +1,30 @@
-function verifyRegistration()
-{
+// when entered key is pressed submit form
+document.addEventListener('keyup', function (event) {
+    if (event.code === 'Enter') {
+        verifyRegistration();
+    }
+});
+
+function verifyRegistration() {
     let fname = document.getElementById("firstName");
     let lname = document.getElementById("lastName");
-    let email = document.getElementById("email");
     let userName = document.getElementById("username");
     let pass = document.getElementById("password");
-    let phone = document.getElementById("phone");
+    let repeatPass = document.getElementById("repeatPassword");
 
-    if ((fname.value == "") || (lname.value == "") || (email.value == "") || 
-        (userName.value == "") || (pass.value == "") || (phone.value == "")) {
+    // checks that all fields were filled out
+    if ((fname.value == "") || (lname.value == "") || (userName.value == "") || 
+        (pass.value == "") || (repeatPass.value == "")) {
         document.getElementById("formCorrection").innerHTML = "All fields required*";
-		document.getElementById("formCorrection").style.color = 'red';
+        document.getElementById("formCorrection").style.color = 'red';
         return;
     }
-    if (!email.checkValidity())
+
+    if (pass.value != repeatPass.value)
     {
-        document.getElementById("formCorrection").innerHTML = "Provide email with correct format: example@example.com*";
-		document.getElementById("formCorrection").style.color = 'red';
-    }
-    if (!phone.checkValidity())
-    {
-        document.getElementById("formCorrection").innerHTML = "Provide phone number with correct format: 1234567890*";
-		document.getElementById("formCorrection").style.color = 'red';
+        document.getElementById("formCorrection").innerHTML = "Password don't match*";
+        document.getElementById("formCorrection").style.color = 'red';
+        return;
     }
 
 
